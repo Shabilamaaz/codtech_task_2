@@ -1,0 +1,238 @@
+
+SQL*Plus: Release 10.2.0.1.0 - Production on Wed Jul 10 23:46:51 2024
+
+Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+SQL> conn
+Enter user-name: library
+Enter password:
+Connected.
+SQL> select * from library
+  2  ;
+select * from library
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+BOOK_DETAILS                   TABLE
+MEMBER                         TABLE
+TRANSACTIONS                   TABLE
+
+SQL> desc book_details;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ BOOKID                                    NOT NULL NUMBER(4)
+ BOOK_TITLE                                         VARCHAR2(10)
+ AUTHOR                                             VARCHAR2(12)
+ BOOK_SUB                                           VARCHAR2(12)
+ PUBLICATION                                        VARCHAR2(10)
+ EDITION                                            VARCHAR2(10)
+ PUBLISH_YR                                         NUMBER(4)
+ PRICE                                              NUMBER(5)
+ PAGE                                               NUMBER(4)
+ BILL_DATE                                          DATE
+ SUPLIER                                            VARCHAR2(10)
+
+SQL> select * from book_details;
+
+    BOOKID BOOK_TITLE AUTHOR       BOOK_SUB     PUBLICATIO EDITION    PUBLISH_YR
+---------- ---------- ------------ ------------ ---------- ---------- ----------
+     PRICE       PAGE BILL_DATE SUPLIER
+---------- ---------- --------- ----------
+      1001 python     pk singh     cs           BPB        9th              2023
+       345        456 02-JAN-23 novelty
+
+      1004 Phy lab    Roli         Physics      Prakash    3rd              1200
+      2020        570 23-MAR-23 ABD
+
+       105 IOT        lalita       CS           CBH        07               2000
+       475        500 12-DEC-22 aspri
+
+
+    BOOKID BOOK_TITLE AUTHOR       BOOK_SUB     PUBLICATIO EDITION    PUBLISH_YR
+---------- ---------- ------------ ------------ ---------- ---------- ----------
+     PRICE       PAGE BILL_DATE SUPLIER
+---------- ---------- --------- ----------
+      2500 DSA        mohan        comp         ajay       9th              2013
+       550        600 13-APR-23 b9
+
+      7800 cpp        komal        comp         apr        3th              2005
+       750        498 01-JAN-24 good drop
+
+      3400 h practice tul singh    hindi        mallicka   5th              2021
+       800        789 15-AUG-20 aska
+
+
+    BOOKID BOOK_TITLE AUTHOR       BOOK_SUB     PUBLICATIO EDITION    PUBLISH_YR
+---------- ---------- ------------ ------------ ---------- ---------- ----------
+     PRICE       PAGE BILL_DATE SUPLIER
+---------- ---------- --------- ----------
+      5600 html       pk sir       computer     pothi      7th              2021
+       600        450 11-JAN-21 sristi
+
+      6500 toc        vk varma     english      apk        11th             2019
+       798        670 13-SEP-18 abpc
+
+      3200 java       silpa        cs           xup        8th              2005
+       760         98 31-AUG-19 jpj
+
+
+    BOOKID BOOK_TITLE AUTHOR       BOOK_SUB     PUBLICATIO EDITION    PUBLISH_YR
+---------- ---------- ------------ ------------ ---------- ---------- ----------
+     PRICE       PAGE BILL_DATE SUPLIER
+---------- ---------- --------- ----------
+      1300 dbms       sohan        computer     cbh        10sth            2019
+       890       1000 14-SEP-21 chika
+
+      1200            p k varma    evs          ssp        8th              2020
+       760        500 12-JUN-21 kaif
+
+      6700 Envorment  pk sinha     evs          kkp        6th              2017
+       450        169 16-MAR-02 saif
+
+
+    BOOKID BOOK_TITLE AUTHOR       BOOK_SUB     PUBLICATIO EDITION    PUBLISH_YR
+---------- ---------- ------------ ------------ ---------- ---------- ----------
+     PRICE       PAGE BILL_DATE SUPLIER
+---------- ---------- --------- ----------
+      8900 geo        mallick      geophy       chhabila   7th              2023
+       500        300 13-AUG-22 maaja
+
+      7653 java       ahmad        cp           mallick                     2024
+       657        376 19-OCT-24 mallick
+
+      7579 java       ahmad\       cp                      9th              2024
+       657        376 19-OCT-24 mallick
+
+
+15 rows selected.
+
+SQL> desc member;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ MEM_ID                                             NUMBER(5)
+ MEM_NAME                                           VARCHAR2(12)
+ MEM_FNAME                                          VARCHAR2(12)
+ GENDER                                             VARCHAR2(7)
+ COURSE                                             VARCHAR2(10)
+ REFNO                                              NUMBER(5)
+ ADDRESS                                            VARCHAR2(10)
+ DOB                                                DATE
+ MOBNO                                              NUMBER(10)
+ EMAIL                                              VARCHAR2(20)
+
+SQL> select * from member;
+
+    MEM_ID MEM_NAME     MEM_FNAME    GENDER  COURSE          REFNO ADDRESS
+---------- ------------ ------------ ------- ---------- ---------- ----------
+DOB            MOBNO EMAIL
+--------- ---------- --------------------
+       101 Atul kumar   kkp          Male    BCA              1000 kurji
+01-JAN-02 8434482331 atul128@gmail.com
+
+       101 satul kumar  vardhane     Male    mCA              3000 patna
+04-DEC-01 8434481233 satul821@gmail.com
+
+       501 vishal       ujwal        male    mca              5300 patliputra
+18-JAN-02 9608091538 vishal123@gamil.com
+
+
+    MEM_ID MEM_NAME     MEM_FNAME    GENDER  COURSE          REFNO ADDRESS
+---------- ------------ ------------ ------- ---------- ---------- ----------
+DOB            MOBNO EMAIL
+--------- ---------- --------------------
+       110 pankaj       ram          male    bba              1300 jehanabad
+18-DEC-06 2376091538 pankaj123@gamil.com
+
+       120 shabila      malick       female  b.tech           5999 patliputra
+17-DEC-90 6080915380 sabila@gamil.com
+
+       239 udipta       mohan        male    b.tech           1599 jehanabad
+14-MAR-01 1235446743 udipta@gmail.com
+
+
+    MEM_ID MEM_NAME     MEM_FNAME    GENDER  COURSE          REFNO ADDRESS
+---------- ------------ ------------ ------- ---------- ---------- ----------
+DOB            MOBNO EMAIL
+--------- ---------- --------------------
+       110 kashtu       kumar        male    BBA              3400 patna
+10-JAN-00 7689456786 kashtu@gmail.con
+
+       120 priya        yadav ji     female  MCA              2130 siwan
+25-MAR-02 9843758834 priya@gamin.con
+
+       130 sonali       mahato ji    female  BA               3450 danapur
+01-APR-04 8756698790 sonali@gmain.com
+
+
+    MEM_ID MEM_NAME     MEM_FNAME    GENDER  COURSE          REFNO ADDRESS
+---------- ------------ ------------ ------- ---------- ---------- ----------
+DOB            MOBNO EMAIL
+--------- ---------- --------------------
+       122 sadgi        kushwaha ji  female  BCA              1239 anishabad
+12-SEP-02 8767845368 sadgi@gmail.com
+
+       143 arpita       chauhan ji   female  BBA                   saguna
+12-NOV-03 7864469887 arpita@gmail.com
+
+       112 sittu        raja ji      male    B.com            8763
+29-NOV-12 6789065446 sittu@gmail.com
+
+
+    MEM_ID MEM_NAME     MEM_FNAME    GENDER  COURSE          REFNO ADDRESS
+---------- ------------ ------------ ------- ---------- ---------- ----------
+DOB            MOBNO EMAIL
+--------- ---------- --------------------
+       145 prakash      raja ji      male    o level          6543 patna
+          6789008764 prakash@gmail.com
+
+       132 anup                      male    MCA                   siwan
+          8765468980 anup@gmail.com
+
+
+14 rows selected.
+
+SQL> desc transactions;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ BOOK_NAME                                          VARCHAR2(20)
+ STUDENT_ID                                         VARCHAR2(12)
+ BORROW                                             VARCHAR2(7)
+ RETURN                                             VARCHAR2(7)
+
+SQL> select * from transactions;
+
+BOOK_NAME            STUDENT_ID   BORROW  RETURN
+-------------------- ------------ ------- -------
+                     102          1       0
+                     202          3       1
+Python               4560         3       0
+Java                 2202         2       2
+CPP                  3443         6       3
+Hindi                393          3       2
+maths                365          5       1
+English              414          5       4
+Mathematics          523          3       1
+Science              4            2       0
+Physics              203          4       1
+
+BOOK_NAME            STUDENT_ID   BORROW  RETURN
+-------------------- ------------ ------- -------
+Chemistry            309          8       6
+SS                   239          3       2
+DSA                  189          4       3
+IOT                  908          2       1
+TOC                  2345         9       7
+C                    6754         7       7
+DBMS                 2024         4       1
+Networking           6578         12      10
+Designing            8954         9       4
+
+20 rows selected.
+
+SQL>
